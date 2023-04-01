@@ -1,6 +1,8 @@
 import express from "express";
 import configViewEngine from "./configs/viewEngine";
 import initWebRoute from "./route/web";
+import initAPIRoute from "./route/api";
+
 // import connection from "./configs/connectDB";
 
 require('dotenv').config();
@@ -15,7 +17,8 @@ app.use(express.json());
 configViewEngine(app);
 //init web route
 initWebRoute(app);
-
+//init api route
+initAPIRoute(app);
 app.listen(port, () => {
     console.log(`Miku-chan writing some thing in http://localhost:${port}/`)
 })
